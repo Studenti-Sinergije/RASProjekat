@@ -1,14 +1,4 @@
 <?php
-
+    require("includes/header.php");
+    require("include/footer.php");
 ?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-    </head>
-
-    <body>
-    
-    </body>
-</html>
