@@ -1,0 +1,10 @@
+.description img {
+    width: 200;
+    height: auto;
+    float: left;
+}
+
+.description {
+    overflow: hidden;
+}
+
