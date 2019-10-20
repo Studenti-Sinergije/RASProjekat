@@ -3,5 +3,5 @@
 ?>
 
 <?php
-    require("include/footer.php");
+    require("includes/footer.php");
 ?>
