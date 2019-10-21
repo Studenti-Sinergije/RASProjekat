@@ -1,0 +1,12 @@
+.nav li {
+	display: inline-block;
+	float: center;
+}
+
+.login_btn {
+	float: right;
+}
+
+.nav {
+	text-align: center;
+}
