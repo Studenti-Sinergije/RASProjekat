@@ -5,9 +5,9 @@
 <html>
     <head>
         <title>BO.ba</title>
+        <link rel="stylesheet" type="text/css" href="style/header.css">
     </head>
-	<link rel="stylesheet" type="text/css" href="style/header.css">
-	
+
     <body>
         <div class = "header">
           <div class="logo"> <a href="index.php"><img src="images/logo.png" alt="logo"/></a>  </div>

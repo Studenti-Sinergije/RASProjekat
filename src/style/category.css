@@ -1,0 +1,26 @@
+.category{
+    float: left;
+    text-align: center;
+    width: 24%;
+    border: 1px solid black;
+}
+
+.category img {
+    height: auto;
+    width: 50%;
+}
+
+.category a {
+    display: block;
+    text-decoration: none;
+}
+
+.categories{
+    margin: 0 auto;
+    width: 80%;
+    overflow: hidden;
+}
+
+.clear-fix{
+    overflow: auto;
+}
