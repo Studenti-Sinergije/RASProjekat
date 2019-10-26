@@ -6,10 +6,12 @@
         
         private $id;
         private $name;
+        private $image;
         
-        public function __construct($id, $name) {
+        public function __construct($id, $name, $image) {
             $this->id = $id;
             $this->name = $name;
+            $this->image = $image;
         }
         
         public function getID() {
@@ -18,6 +20,10 @@
         
         public function getName() {
             return $this->name;
+        }
+        
+        public function getImage() {
+            return $this->image;
         }
         
     }
@@ -39,12 +45,11 @@
             
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $category = new Category($row["ID"], $row["name"]);
+                    $category = new Category($row["ID"], $row["name"], $row["image"]);
                     
                     $indx = $category->getID();
-                    $name = $category->getName();
                     
-                    $this->list[$indx] = $name;
+                    $this->list[$indx] = $category;
                 }
             }
         }
