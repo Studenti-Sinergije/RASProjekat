@@ -28,7 +28,8 @@
                 $categoryList = CategoryList::getInstance();
                 $categories = $categoryList->getCategories();
             
-                foreach($categories as $indx => $name) {
+                foreach($categories as $indx => $category) {
+                    $name = $category->getName();
                     echo "<option value = \"$indx\">$name</option>\n";
                 }
             
