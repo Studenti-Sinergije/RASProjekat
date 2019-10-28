@@ -6,8 +6,8 @@
 }
 
 .category img {
-    height: auto;
-    width: 50%;
+    height: 0;
+    width: auto;
 }
 
 .category a {
