@@ -20,9 +20,9 @@
 
 ?>
 
-<div class = "ad-form">
-    <form class = "form" action = "add_ad.php" method = "POST">
-        <select name = "category">
+<div class="ad-form">
+    <form class="form" action="add_ad.php" method="POST">
+        <select name="category">
             <?php
             
                 $categoryList = CategoryList::getInstance();
@@ -30,28 +30,26 @@
             
                 foreach($categories as $indx => $category) {
                     $name = $category->getName();
-                    echo "<option value = \"$indx\">$name</option>\n";
+                    echo "<option value=\"$indx\">$name</option>\n";
                 }
             
             ?>
         </select>
-        <div class = "input-text">
-            <input type = "text" name = "name">
+        <div class="input-text">
+            <input type="text" name="name">
         </div>
-        <div class = "input-text">
-            <textarea name = "description"></textarea>
+        <div class="input-text">
+            <textarea name="description"></textarea>
         </div>
-        <div class = "input-text">
-            <input type = "text" name = "price">
+        <div class="input-text">
+            <input type="text" name="price">
         </div>
-        <div class = "input-submit">
-            <input type = "submit" name = "submit">
+        <div class="input-submit">
+            <input type="submit" name="submit">
         </div>
     </form>
 </div>
 
 <?php
-
     require("includes/footer.php");
-
 ?>

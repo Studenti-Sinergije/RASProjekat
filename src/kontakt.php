@@ -1,16 +1,7 @@
 <?php
     require("includes/header.php");
-?>
- <link rel="stylesheet" href="style/contact.css">
 
-<div class="contact-form">
-<h2>Kontaktirajte nas</h2>
-
-<?php
-
-if ($_POST){
-
-	extract($_POST);
+    extract($_POST);
 	$message = '';
 
 	if ($ime === ''){
@@ -38,9 +29,12 @@ if ($_POST){
 	}
 
 	print $message.'<br><br>';
-}
-
 ?>
+
+<link rel="stylesheet" href="style/contact.css">
+
+<div class="contact-form">
+    <h2>Kontaktirajte nas</h2>
 
     <form method="post">
 	    <div>
@@ -62,7 +56,7 @@ if ($_POST){
 </div>
 
 <div class="contact-info">
-<h2>Kontakt informacije</h3>
+<h2>Kontakt informacije</h2>
 	<ul>
  		<li>Neki tekst</li>
  		<li>Neki tekst</li>
