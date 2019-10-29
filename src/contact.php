@@ -36,7 +36,7 @@
 <div class="contact-form">
     <h2>Kontaktirajte nas</h2>
 
-    <form method="post">
+    <form method="post" action="contact.php">
 	    <div>
 			Vaše ime:<br>
 			<input name="ime" value="<?php echo $ime; ?>">	

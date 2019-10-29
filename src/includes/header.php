@@ -16,16 +16,16 @@
                 </a>
             </div>
             <div class="login_btn">
-                <a href="singin.php" onclick="openForm()">Prijava/</a>
-                <a href="singup.php" onclick="openForm()">Registracija</a>
+                <a href="login.php" onclick="openForm()">Prijava/</a>
+                <a href="register.php" onclick="openForm()">Registracija</a>
             </div>
         </div>
 
         <div class="nav">
             <ul>     
                 <li><a href="index.php">Početna</a></li>
-                <li><a href="kategorije.php">Kategorije</a></li>
-                <li><a href="oNama.php">O nama</a></li>
-                <li><a href="kontakt.php">Kontakt</a></li>
+                <li><a href="categories.php">Kategorije</a></li>
+                <li><a href="about_us.php">O nama</a></li>
+                <li><a href="contact.php">Kontakt</a></li>
             </ul>   
         </div>
