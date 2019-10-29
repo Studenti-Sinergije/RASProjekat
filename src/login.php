@@ -49,7 +49,7 @@
     }
 ?>
 
-<link rel="stylesheet" type="text/css" href="style/singin.css">
+<link rel="stylesheet" type="text/css" href="style/login.css">
 
 <h1>Login</h1>
 

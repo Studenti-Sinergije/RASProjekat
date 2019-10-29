@@ -57,6 +57,8 @@
     }
 ?>
 
+<link rel="stylesheet" type="text/css" href="style/register.css">
+
 <h1>Sign up</h1>
 
 <div class="form-popup">
