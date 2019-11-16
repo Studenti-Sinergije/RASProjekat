@@ -17,4 +17,18 @@
     }
     
     ?>
+
+    <div class="pagination">
+        <?php
+
+        for ($i = 1; $i <= ($numberOfPages ?? 0); $i++) {
+            if ($i == $currentPage) {
+                echo "<a class='active-page' href='index.php?page=$i'>$i</a>";
+            } else {
+                echo "<a class='page' href='index.php?page=$i'>$i</a>";
+            }
+        }
+
+        ?>
+    </div>
 </div>

@@ -13,6 +13,8 @@ $connection = $database->getConnection();
 
 $result = null;
 
+$numberOfPages = 0;
+
 if (isset($_POST["submit"])) {
     $stmt = $connection->prepare("SELECT `ID`, `name`, `description`, `price`, `image`, `type_of_transaction` FROM ad WHERE `name` LIKE ? OR `description` LIKE ?");
     
@@ -23,7 +25,30 @@ if (isset($_POST["submit"])) {
     
     $result = $stmt->get_result();
 } else {
-    $result = $connection->query("SELECT ID, name, description, price, image, type_of_transaction FROM ad ORDER BY RAND() LIMIT 15");
+    $resultsPerPage = 10;
+    $currentPage = 1;
+    
+    $result = $connection->query("SELECT COUNT(ID) AS total_rows FROM ad");
+    
+    $totalRows = $result->fetch_assoc()["total_rows"];
+    $numberOfPages = ceil($totalRows / $resultsPerPage);
+    
+    if (isset($_GET["page"])) {
+        $currentPage = $_GET["page"];
+    }
+    
+    if ($currentPage < 1) {
+        $currentPage = 1;
+    }
+    
+    if ($currentPage > $numberOfPages) {
+        $currentPage = $numberOfPages;
+    }
+    
+    $startIndx = ($currentPage - 1) * $resultsPerPage;
+    
+    $result = $connection->query("SELECT ID, name, description, price, image, type_of_transaction FROM ad ORDER BY created_on DESC LIMIT $startIndx, $resultsPerPage");
+    print mysqli_error($connection);
 }
 
 $ads = array();
