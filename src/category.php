@@ -25,24 +25,9 @@ $result = $stmt->get_result();
 $categories = CategoryList::getInstance()->getCategories();
 $category = $categories[$_GET["id"]];
 
-?>
+$title = $category->getName();
 
-<link rel="stylesheet" type="text/css" href="style/ad_card.css">
+require("templates/ad_list.php");
+require("templates/footer.html");
 
-<div class="ad-container">
-    <h1><?php echo $category->getName(); ?></h1>
-    
-    <?php 
-    
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            include("templates/ad_card.php");
-        }
-    }
-    
-    ?>
-</div>
-
-<?php
-    require("templates/footer.html");
 ?>
