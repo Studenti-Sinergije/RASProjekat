@@ -59,3 +59,7 @@
     height: 5%;
     font-size: 20px;
 }
+
+.submit input:hover {
+    background-color: rgb(248, 157, 7);
+}

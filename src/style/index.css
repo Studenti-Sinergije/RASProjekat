@@ -1,0 +1,38 @@
+.ad-container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.search input[type="text"] {
+    width: 85%;
+    float: left;
+    height: 5%;
+    font-size: 20px;
+}
+
+.search input[type="submit"] {
+    width: 15%;
+    height: 5%;
+    font-size: 20px;
+    background-color: rgb(78, 153, 186);
+    color: white;
+    padding: 5px 10px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.search input[type="submit"]:hover {
+    background-color: rgb(248, 157, 7);
+}
+
+.ad-container h1 {
+    margin: 0 0 20px 0;
+    text-align: center;
+}

@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="style/ad_card.css">
+
 <div class="ad">
     <div class="left-row">
         <img src="<?php echo $row["image"] ?>">
