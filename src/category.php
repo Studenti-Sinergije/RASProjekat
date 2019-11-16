@@ -22,6 +22,13 @@ $stmt->execute();
 
 $result = $stmt->get_result();
 
+$ads = array();
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $ads[] = $row;
+    }
+}
+
 $categories = CategoryList::getInstance()->getCategories();
 $category = $categories[$_GET["id"]];
 

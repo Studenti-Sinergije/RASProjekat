@@ -26,6 +26,13 @@ if (isset($_POST["submit"])) {
     $result = $connection->query("SELECT ID, name, description, price, image, type_of_transaction FROM ad ORDER BY RAND() LIMIT 15");
 }
 
+$ads = array();
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $ads[] = $row;
+    }
+}
+
 $title = "Izdvojeni oglasi";
 
 require("templates/ad_list.php");

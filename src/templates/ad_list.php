@@ -10,14 +10,10 @@
         </form>
     </div>
     
-    <?php 
+    <?php
     
-    if ($result != null) {
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                include("templates/ad_card.php");
-            }
-        }
+    foreach ($ads as $ad) {
+        include("templates/ad_card.php");
     }
     
     ?>

@@ -42,7 +42,7 @@ require("templates/header.php");
     
     <div class="map">
         <hr>
-        <h1>Kako do nas?</h1>
+        <h2>Kako do nas?</h2>
         <iframe src="https://maps.google.com/maps?q=bijeljina&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe>
     </div>
 </div>
