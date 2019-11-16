@@ -33,9 +33,9 @@ require("templates/header.php");
         <div class="contact-info">
             <h2>Kontakt informacije</h2>
             <ul>
-                <li>Neki tekst</li>
-                <li>Neki tekst</li>
-                <li>Neki tekst</li>
+                <li>Broj telefona: <strong>055/111-222</strong></li>
+                <li>Fax: <strong>055/888-999</strong></li>
+                <li>Email: <strong>sinovi.sinergije@sinergija.ba</strong></li>
             </ul>
         </div>
     </div>
