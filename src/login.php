@@ -3,7 +3,8 @@
 require("templates/header.php");
 require_once("includes/database.php");
 
-session_start();
+if (session_id() == '' || !isset($_SESSION))
+    session_start();
 
 $error = "";
 
