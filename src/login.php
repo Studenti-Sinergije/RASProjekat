@@ -55,14 +55,24 @@ function checkLoginParams($email, $password) {
 
 ?>
 
+<link rel="stylesheet" type="text/css" href="style/login.css">
+
 <div class="background">
-    <h1>Login</h1>
+    <h1>Prijava</h1>
     
     <div class="form-container">
         <form action="login.php" method="POST">
-            <input type="text" placeholder="Email" name="email" required>
-            <input type="password" placeholder="Password" name="password" required>
-            <input type="submit" name="submit" value="submit">
+            <div class="input">
+                <span>Email</span>
+                <input type="text" name="email" required>
+            </div>
+            <div class="input">
+                <span>Lozinka</span>
+                <input type="password" name="password" required>
+            </div>
+            <div class="submit">
+                <input type="submit" name="submit" value="Prijavi se">
+            </div>
 
             <?php 
                 if ($error != "") {

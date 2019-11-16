@@ -64,16 +64,32 @@ function checkRegistrationParams($email, $password, $passwordConfirm, $phone) {
 
 ?>
 
+<link rel="stylesheet" type="text/css" href="style/register.css">
+
 <div class="background">
-    <h1>Sign up</h1>
+    <h1>Registruj se</h1>
     
     <div class="form-container">
         <form action="register.php" method="POST">
-            <input type="text" placeholder="Email" name="email" required>
-            <input type="password" placeholder="Lozinka" name="password" required>
-            <input type="password" placeholder="Potvrda lozinke" name="passwordConfirm" required>
-            <input type="text" placeholder="Telefon" name="phone" required>
-            <input type="submit" name="submit" value="submit">
+            <div class="input">
+                <span>Email</span>
+                <input type="text" name="email" required>
+            </div>
+            <div class="input">
+                <span>Lozinka</span>
+                <input type="password" name="password" required>
+            </div>
+            <div class="input">
+                <span>Potvrda lozinke</span>
+                <input type="password" name="passwordConfirm" required>
+            </div>
+            <div class="input">
+                <span>Broj telefona</span>
+                <input type="text" name="phone" required>
+            </div>
+            <div class="submit">
+                <input type="submit" name="submit" value="Registruj se">
+            </div>
 
             <?php 
                 if (($error ?? '') != "") {

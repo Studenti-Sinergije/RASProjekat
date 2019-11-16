@@ -1,0 +1,45 @@
+.background {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.background h1 {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.form-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.input {
+    margin-top: 5px;
+}
+
+.input span {
+    font-size: 20px;
+}
+
+.input input {
+    width: 100%;
+    height: 5%;
+    font-size: 20px;
+}
+
+.submit {
+    margin-top: 5px;
+}
+
+.submit input {
+    background-color: rgb(78, 153, 186);
+    color: white;
+    padding: 5px 10px;
+    border-style: none;
+    margin-top: 5px;
+    width: 100%;
+    height: 5%;
+    font-size: 20px;
+    cursor: pointer;
+}

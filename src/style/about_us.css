@@ -4,6 +4,11 @@
     border-radius: 5px;
 }
 
+.desc-container h1 {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
 .description {
     overflow: hidden;
 }
