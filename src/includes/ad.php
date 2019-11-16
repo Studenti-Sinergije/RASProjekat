@@ -87,9 +87,9 @@ class TransactionTypes {
     
     public static function getTypes() {
         $types = array();
-        $types["OFFER"]    = 0;
-        $types["DEMAND"]   = 1;
-        $types["EXCHANGE"] = 2;
+        $types["Ponuda"]      = 0;
+        $types["Potraznja"]   = 1;
+        $types["Zamjena"]     = 2;
         return $types;
     }
     

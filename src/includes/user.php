@@ -1,6 +1,6 @@
 <?php
 
-require_once("includes/database.php");
+require_once("database.php");
 
 class User {
 
@@ -38,6 +38,18 @@ class User {
         return $this->userLevel;
     }
 
+}
+
+class UserLevels {
+    
+    public static function getUserLevels() {
+        $userLevels = array();
+        $userLevels["guest"] = 0;
+        $userLevels["user"]  = 1;
+        $userLevels["admin"] = 2;
+        return $userLevels;
+    }
+    
 }
 
 ?>

@@ -5,7 +5,10 @@ require_once("includes/database.php");
 
 $error = "";
 if (isset($_POST["submit"])) {
-    extract($_POST);
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $passwordConfirm = $_POST["passwordConfirm"];
+    $phone = $_POST["phone"];
 
     $error = checkRegistrationParams($email, $password, $passwordConfirm, $phone);
     if ($error == "") {
@@ -61,22 +64,24 @@ function checkRegistrationParams($email, $password, $passwordConfirm, $phone) {
 
 ?>
 
-<div class="form-container">
+<div class="background">
     <h1>Sign up</h1>
+    
+    <div class="form-container">
+        <form action="register.php" method="POST">
+            <input type="text" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Lozinka" name="password" required>
+            <input type="password" placeholder="Potvrda lozinke" name="passwordConfirm" required>
+            <input type="text" placeholder="Telefon" name="phone" required>
+            <input type="submit" name="submit" value="submit">
 
-    <form action="register.php" method="POST">
-        <input type="text" placeholder="Email" name="email" required>
-        <input type="password" placeholder="Lozinka" name="password" required>
-        <input type="password" placeholder="Potvrda lozinke" name="passwordConfirm" required>
-        <input type="text" placeholder="Telefon" name="phone" required>
-        <input type="submit" name="submit" value="submit">
-
-        <?php 
-            if (($error ?? '') != "") {
-                echo "<p>$error</p>";
-            }
-        ?>
-    </form>
+            <?php 
+                if (($error ?? '') != "") {
+                    echo "<p>$error</p>";
+                }
+            ?>
+        </form>
+    </div>
 </div>
 
 <?php require("templates/footer.html"); ?>

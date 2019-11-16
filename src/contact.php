@@ -2,72 +2,48 @@
 
 require("templates/header.php");
 
-if (isset($_POST["submit"])) {
-    extract($_POST);
-    $message = '';
-
-    if ($ime === '') {
-        $message = 'Unesite ime!';
-    } else if ($email === '') {
-        $message = 'Unesite vašu e-mail adresu!';
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $message = 'Uneta e-mail adresa nije ispravna!';
-    } else if ($poruka === '') {
-        $message = 'Unesite poruku!';
-    }
-
-    if (!$message) {
-        $to = 'besplatnioglasi@bo.ba'; 
-        $subject = 'Poruka sa sajta';
-        $email_message = $poruka;
-        $from = "$ime <$email>";
-        $headers =	'From: ' . $from . "\r\n" .
-                'Reply-To: ' . $from . "\r\n";
-
-        if (mail($to, $subject, $email_message, $headers)) { 
-            $message = 'Poruka je poslata!';
-        } else {
-            $message = 'Došlo je do greške, poruka nije poslata.';
-        }
-    }
-
-    print $message.'<br><br>';
-}
-
 ?>
 
 <link rel="stylesheet" href="style/contact.css">
 
-<div class="contact">
-    <div class="contact-form">
-        <h2>Kontaktirajte nas</h2>
+<div class="contact-container">
+    <div class="contact-form-container">
+        <div class="contact-form">
+            <h2>Kontaktirajte nas</h2>
 
-        <form method="post" action="contact.php">
-            <div class="text-input">
-                <span>Ime:</span>
-                <input type="text" name="name">	
-            </div>
-            <div class="text-input">
-                <span>Email:</span>
-                <input type="text" name="email">	
-            </div>
-            <div class="text-input">
-                <span>Poruka:</span>
-                <textarea name="message"></textarea>
-            </div>
-            <div class="submit">
-                <input type="submit" value="Pošalji"> 
-            </div>
-        </form>
+            <form method="post" action="contact.php">
+                <div class="text-input">
+                    <span>Ime:</span>
+                    <input type="text" name="name">	
+                </div>
+                <div class="text-input">
+                    <span>Email:</span>
+                    <input type="text" name="email">	
+                </div>
+                <div class="text-input">
+                    <span>Poruka:</span>
+                    <textarea name="message"></textarea>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Pošalji"> 
+                </div>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h2>Kontakt informacije</h2>
+            <ul>
+                <li>Neki tekst</li>
+                <li>Neki tekst</li>
+                <li>Neki tekst</li>
+            </ul>
+        </div>
     </div>
-
-    <div class="contact-info">
-        <h2>Kontakt informacije</h2>
-        <ul>
-            <li>Neki tekst</li>
-            <li>Neki tekst</li>
-            <li>Neki tekst</li>
-        </ul>
+    
+    <div class="map">
+        <hr>
+        <h1>Kako do nas?</h1>
+        <iframe src="https://maps.google.com/maps?q=bijeljina&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe>
     </div>
 </div>
 

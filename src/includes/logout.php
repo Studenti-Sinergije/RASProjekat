@@ -1,6 +1,6 @@
 <?php
 
-require_once("includes/user.php");
+require_once("user.php");
 
 if (session_id() == '' || !isset($_SESSION))
     session_start();

@@ -10,11 +10,12 @@ $categories = $categoryList->getCategories();
 
 <link rel="stylesheet" type="text/css" href="style/categories.css">
 <div class="categories">
+    <h1>Kategorije</h1>
     <?php foreach ($categories as $indx => $category): ?>
     <div class="category-container">
         <div class="category-item">
             <img src="images/<?php echo $category->getImage(); ?>" alt="penis">
-            <a href="category.php/id=<?php echo $category->getID(); ?>"><?php echo $category->getName(); ?></a>
+            <a href="category.php?id=<?php echo $category->getID(); ?>"><?php echo $category->getName(); ?></a>
         </div>
     </div>
     <?php endforeach; ?>

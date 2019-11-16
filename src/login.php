@@ -10,9 +10,7 @@ if (session_id() == '' || !isset($_SESSION))
 $error = "";
 
 if (isset($_POST["submit"])) {
-    extract($_POST);
-
-    $error = checkLoginParams($email, $password);
+    $error = checkLoginParams($_POST["email"], $_POST["password"]);
 }
 
 function checkLoginParams($email, $password) {
@@ -57,20 +55,22 @@ function checkLoginParams($email, $password) {
 
 ?>
 
-<div class="form-container">
+<div class="background">
     <h1>Login</h1>
+    
+    <div class="form-container">
+        <form action="login.php" method="POST">
+            <input type="text" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="submit" name="submit" value="submit">
 
-    <form action="login.php" method="POST">
-        <input type="text" placeholder="Email" name="email" required>
-        <input type="password" placeholder="Password" name="password" required>
-        <input type="submit" name="submit" value="submit">
-
-        <?php 
-            if (($error ?? '') != "") {
-                echo "<p>$error</p>";
-            }
-        ?>
-    </form>
+            <?php 
+                if ($error != "") {
+                    echo "<p>$error</p>";
+                }
+            ?>
+        </form>
+    </div>
 </div>
 
 <?php require("templates/footer.html"); ?>

@@ -19,18 +19,56 @@ if (isset($_SESSION["loggedin"])) {
     header("Location: index.php");
 }
 
+$error = "";
+
 if ($_SERVER["request_method"] = "POST" && isset($_POST["name"])) {
     $categories = CategoryList::getInstance()->getCategories();
     $user = $_SESSION["user"];
     
-    $categoryID = $categories[$_POST["category"]];
+    $categoryID = $categories[$_POST["category"]]->getID();
     $creatorID = $user->getID();
+    $numOfViews = 0;
     $name = $_POST["name"];
     $description = $_POST["description"];
     $phone = $user->getPhone();
     $email = $user->getEmail();
+    
     $price = $_POST["price"];
+    if (!is_numeric($price)) {
+        $error = "Cijena nije broj";
+    }
+    
     $typeOfTransaction = $_POST["type"];
+    
+    $image = $_FILES["image"]["tmp_name"];
+    if (!checkImage($image)) {
+        $error = "Fajl nije slika";
+    }
+    
+    if ($error == "") {
+        $extension = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
+        $fileName = "images/" . strval(time()) . "." . $extension;
+        rename($image, $fileName);
+        
+        $database = Database::getInstance();
+        $connection = $database->getConnection();
+
+        $stmt = $connection->prepare("INSERT INTO ad(cat_ID, creator_ID, num_of_views, name, description, phone, email, price, type_of_transaction, image)
+                                      VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssssss", $categoryID, $creatorID, $numOfViews, $name, $description, $phone, $email, $price, $typeOfTransaction, $fileName);
+        $stmt->execute();
+        
+        header("Location: index.php");
+    }
+}
+
+function checkImage($image) {
+    $check = getimagesize($image);
+    if ($check !== false) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 ?>
@@ -41,7 +79,7 @@ if ($_SERVER["request_method"] = "POST" && isset($_POST["name"])) {
     <h1>Dodaj oglas</h1>
     
     <div class="form-container">
-        <form class="form" action="add_ad.php" method="POST">
+        <form class="form" action="add_ad.php" method="POST" enctype="multipart/form-data">
             <div class="input">
                 <span>Kategorija</span>
                 <select name="category">
@@ -91,6 +129,12 @@ if ($_SERVER["request_method"] = "POST" && isset($_POST["name"])) {
             <div class="submit">
                 <input type="submit" name="submit" value="Dodaj oglas">
             </div>
+            
+            <?php 
+                if ($error != "") {
+                    echo "<p>$error</p>";
+                }
+            ?>
         </form>
     </div>
 </div>
