@@ -2,6 +2,7 @@
 
 require("templates/header.php");
 require_once("includes/database.php");
+require_once("includes/user.php");
 
 if (session_id() == '' || !isset($_SESSION))
     session_start();
@@ -26,7 +27,7 @@ function checkLoginParams($email, $password) {
     $database = Database::getInstance();
     $connection = $database->getConnection();
 
-    $stmt = $connection->prepare("SELECT ID, password FROM users WHERE email = ?");
+    $stmt = $connection->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
 
@@ -43,8 +44,10 @@ function checkLoginParams($email, $password) {
 
     session_regenerate_id();
     $_SESSION["loggedin"] = TRUE;
-    $_SESSION["name"] = $email;
     $_SESSION["id"] = $row["ID"];
+    
+    $user = new User($row["ID"], $row["email"], $row["phone"], $row["created_on"], $row["user_level"]);
+    $_SESSION["user"] = $user;
     
     header("Location: index.php");
 

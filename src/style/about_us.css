@@ -1,10 +1,16 @@
-.description img {
-    width: 200;
-    height: auto;
-    float: left;
+.desc-container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .description {
     overflow: hidden;
 }
 
+.description img {
+    width: 20%;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+}

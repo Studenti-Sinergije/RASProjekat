@@ -8,7 +8,7 @@ $categories = $categoryList->getCategories();
 
 ?>
 
-<link rel="stylesheet" type="text/css" href="style/category.css">
+<link rel="stylesheet" type="text/css" href="style/categories.css">
 <div class="categories">
     <?php foreach ($categories as $indx => $category): ?>
     <div class="category-container">
