@@ -1,12 +1,48 @@
-.nav li {
-	display: inline-block;
-	float: center;
+.header {
+    overflow: hidden;
 }
 
-.login_btn {
-	float: right;
+body {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .nav {
 	text-align: center;
+    background-color: rgb(78, 153, 186);
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-ul {
+    float: center;
+}
+
+.nav li {
+	display: inline-block;
+}
+
+.nav a {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+}
+
+.nav a:hover {
+    background-color: rgb(248, 157, 7);
+}
+
+.active {
+    background-color: rgb(248, 157, 7);
+}
+
+.login {
+    float: right;
+    position: relative;
+    top: -18px;
 }

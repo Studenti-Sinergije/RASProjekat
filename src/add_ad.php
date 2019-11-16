@@ -1,22 +1,21 @@
 <?php
 
-    require_once("includes/database.php");
+require("templates/header.php");
 
-    require_once("category/category.php");
-    require_once("user/user.php");
+require_once("includes/database.php");
+require_once("includes/category.php");
+require_once("includes/user.php");
 
-    require("includes/header.php");
-
-    if ($_SERVER["request_method"] = "POST" && isset($_POST["name"])) {
-        $categoryID = $category->getCategoryID();
-        $creatorID = $user->getUserID();
-        $name = $_POST["name"];
-        $description = $_POST["description"];
-        $phone = $user->getPhone();
-        $email = $user->getEmail();
-        $price = $_POST["price"];
-        $typeOfTransaction = TransactionTypes::OFFER;
-    }
+if ($_SERVER["request_method"] = "POST" && isset($_POST["name"])) {
+    $categoryID = $category->getCategoryID();
+    $creatorID = $user->getUserID();
+    $name = $_POST["name"];
+    $description = $_POST["description"];
+    $phone = $user->getPhone();
+    $email = $user->getEmail();
+    $price = $_POST["price"];
+    $typeOfTransaction = TransactionTypes::OFFER;
+}
 
 ?>
 
@@ -50,6 +49,4 @@
     </form>
 </div>
 
-<?php
-    require("includes/footer.php");
-?>
+<?php require("templates/footer.html"); ?>

@@ -6,7 +6,7 @@
         
         private $server = "localhost";
         private $username = "root";
-        private $password = "Sinergija@97";
+        private $password = "";
         private $databaseName = "ras";
         
         private $connection;

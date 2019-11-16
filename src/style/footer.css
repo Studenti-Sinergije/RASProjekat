@@ -1,3 +1,7 @@
-.copy-right{
-	text-align: center;
+.footer {
+    text-align: center;
+    background-color: rgb(78, 153, 186);
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
 }

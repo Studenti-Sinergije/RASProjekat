@@ -1,26 +1,31 @@
-.category{
-    float: left;
-    text-align: center;
-    width: 24%;
-    border: 1px solid black;
-}
-
-.category img {
-    height: 20%;
-    width: auto;
-}
-
-.category a {
-    display: block;
-    text-decoration: none;
-}
-
-.categories{
-    margin: 0 auto;
-    width: 80%;
+.categories {
     overflow: hidden;
 }
 
-.clear-fix{
-    overflow: auto;
+.category-container {
+    float: left;
+    text-align: center;
+    width: 25%;
+}
+
+.category-item {
+    border: 1px solid black;
+    margin: 1px;
+}
+
+.category-item img {
+    height: auto;
+    width: 100%;
+}
+
+.category-item a {
+    display: block;
+    text-decoration: none;
+    background-color: rgb(78, 153, 186);
+    color: white;
+    padding: 5px 10px;
+}
+
+.category-item a:hover {
+    background-color: rgb(248, 157, 7);
 }

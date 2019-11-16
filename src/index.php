@@ -1,7 +1,7 @@
 <?php
-    require("includes/header.php");
+    require("templates/header.php");
 ?>
 
 <?php
-    require("includes/footer.php");
+    require("templates/footer.html");
 ?>
