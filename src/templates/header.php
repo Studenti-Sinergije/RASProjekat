@@ -34,15 +34,15 @@ if (session_id() == '' || !isset($_SESSION))
                 <ul class="login">
                     <?php if (isset($_SESSION["loggedin"])): ?> 
                         <?php if ($_SESSION["loggedin"]): ?>
-                            <li><a href="add_ad.php">Dodaj oglas</a></li>
-                            <li><a href="includes/logout.php">Odjavi se</a></li>
+                            <li><a name="nav-item" href="add_ad.php">Dodaj oglas</a></li>
+                            <li><a name="nav-item" href="includes/logout.php">Odjavi se</a></li>
                         <?php else: ?>
-                            <li><a href="login.php">Prijava</a></li>
-                            <li><a href="register.php">Registracija</a></li>
+                            <li><a name="nav-item" href="login.php">Prijava</a></li>
+                            <li><a name="nav-item" href="register.php">Registracija</a></li>
                         <?php endif; ?>
                     <?php else: ?>
-                        <li><a href="login.php">Prijava</a></li>
-                        <li><a href="register.php">Registracija</a></li>
+                        <li><a name="nav-item" href="login.php">Prijava</a></li>
+                        <li><a name="nav-item" href="register.php">Registracija</a></li>
                     <?php endif; ?>
                 </ul>
             </div>
