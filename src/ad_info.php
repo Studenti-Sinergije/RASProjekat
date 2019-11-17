@@ -51,8 +51,10 @@ $creatorInfo = $result->fetch_assoc();
 
 <div class="ad-container">
     <div class="breadcrumbs">
-        <a href="categories.php">Kategorije-></a>
-        <a href="category.php?id=<?php echo $category->getID(); ?>"><?php echo $category->getName() . "->"; ?></a>
+        <a href="categories.php">Kategorije</a>
+        <span> / </span>
+        <a href="category.php?id=<?php echo $category->getID(); ?>"><?php echo $category->getName(); ?></a>
+        <span> / </span>
         <a href="ad_info.php?id=<?php echo $ad->getID(); ?>"><?php echo $ad->getName(); ?></a>
     </div>
     
