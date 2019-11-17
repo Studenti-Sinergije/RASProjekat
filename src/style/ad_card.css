@@ -50,6 +50,11 @@
 
 .read-more {
     float: right;
+    color: rgb(78, 153, 186);
+}
+
+.read-more:hover {
+    color: rgb(248, 157, 7);
 }
 
 .name {

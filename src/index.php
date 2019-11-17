@@ -48,7 +48,6 @@ if (isset($_POST["submit"])) {
     $startIndx = ($currentPage - 1) * $resultsPerPage;
     
     $result = $connection->query("SELECT ID, name, description, price, image, type_of_transaction FROM ad ORDER BY created_on DESC LIMIT $startIndx, $resultsPerPage");
-    print mysqli_error($connection);
 }
 
 $ads = array();

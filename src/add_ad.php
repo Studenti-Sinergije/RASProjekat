@@ -30,8 +30,6 @@ if ($_SERVER["request_method"] = "POST" && isset($_POST["name"])) {
     $numOfViews = 0;
     $name = $_POST["name"];
     $description = $_POST["description"];
-    $phone = $user->getPhone();
-    $email = $user->getEmail();
     
     $price = $_POST["price"];
     if (!is_numeric($price)) {
@@ -53,9 +51,9 @@ if ($_SERVER["request_method"] = "POST" && isset($_POST["name"])) {
         $database = Database::getInstance();
         $connection = $database->getConnection();
 
-        $stmt = $connection->prepare("INSERT INTO ad(cat_ID, creator_ID, num_of_views, name, description, phone, email, price, type_of_transaction, image)
-                                      VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssssss", $categoryID, $creatorID, $numOfViews, $name, $description, $phone, $email, $price, $typeOfTransaction, $fileName);
+        $stmt = $connection->prepare("INSERT INTO ad(cat_ID, creator_ID, num_of_views, name, description, price, type_of_transaction, image)
+                                      VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssssss", $categoryID, $creatorID, $numOfViews, $name, $description, $price, $typeOfTransaction, $fileName);
         $stmt->execute();
         
         header("Location: index.php");
