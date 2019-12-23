@@ -53,7 +53,7 @@ if ($_SERVER["request_method"] = "POST" && isset($_POST["name"])) {
 
         $stmt = $connection->prepare("INSERT INTO ad(cat_ID, creator_ID, num_of_views, name, description, price, type_of_transaction, image)
                                       VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssssss", $categoryID, $creatorID, $numOfViews, $name, $description, $price, $typeOfTransaction, $fileName);
+        $stmt->bind_param("ssssssss", $categoryID, $creatorID, $numOfViews, $name, $description, $price, $typeOfTransaction, $fileName);
         $stmt->execute();
         
         header("Location: index.php");

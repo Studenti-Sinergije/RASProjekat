@@ -30,6 +30,7 @@ if (session_id() == '' || !isset($_SESSION))
                     <li><a name="nav-item" href="categories.php">Kategorije</a></li>
                     <li><a name="nav-item" href="about_us.php">O nama</a></li>
                     <li><a name="nav-item" href="contact.php">Kontakt</a></li>
+                    <li><a name="nav-item" href="news.php">Novosti</a></li>
                 </ul>
                 <ul class="login">
                     <?php if (isset($_SESSION["loggedin"])): ?> 

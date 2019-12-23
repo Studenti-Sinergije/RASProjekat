@@ -1,0 +1,26 @@
+.news {
+    border: 1px solid grey;
+    margin-bottom: 5px;
+}
+
+.title {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(78, 153, 186);
+    padding: 10px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.news a:hover {
+    background-color: rgb(248, 157, 7);
+}
+
+.date {
+    padding: 10px;
+}
+
+.description {
+    padding: 10px;
+}

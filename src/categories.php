@@ -14,7 +14,7 @@ $categories = $categoryList->getCategories();
     <?php foreach ($categories as $indx => $category): ?>
     <div class="category-container">
         <div class="category-item">
-            <img src="images/<?php echo $category->getImage(); ?>" alt="penis">
+            <img src="images/<?php echo $category->getImage(); ?>">
             <a href="category.php?id=<?php echo $category->getID(); ?>"><?php echo $category->getName(); ?></a>
         </div>
     </div>
